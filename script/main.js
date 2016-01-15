@@ -54,15 +54,19 @@ $(function () {
 		ctx.fillStyle = '#000';
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-		var yOffset = 220;
+		var yOffset = 280;
 		var blockHeight = Math.round((canvas.height-yOffset)/4);
+		
+		ctx.strokeStyle = '#666';
+		ctx.lineWidth = 1;
+		ctx.beginPath();
+		ctx.moveTo(canvas.width/2, yOffset);
+		ctx.lineTo(canvas.width/2, canvas.height-blockHeight);
+		ctx.stroke();
 
 		drawColorBand(0, 255,   0,   0);
-		//drawColorBand(1, 255, 255,   0);
 		drawColorBand(1,   0, 255,   0);
-		//drawColorBand(3,   0, 255, 255);
 		drawColorBand(2,   0,   0, 255);
-		//drawColorBand(5, 255,   0, 255);
 		drawColorBand(3, 255, 255, 255);
 
 		function drawColorBand(index, r, g, b) {
@@ -79,14 +83,14 @@ $(function () {
 				switch (band) {
 					case 0:
 						for (var x = 0; x < width; x++) {
-							var c = Math.floor(16*x/width+1)/16;
+							var c = Math.floor(17*x/width)/17;
 							c = Math.pow(c, gamma);
 							drawPixel(x, y, c*r, c*g, c*b);
 						}
 					break;
 					case 1:
 						for (var x = 0; x < width; x++) {
-							var c = Math.floor(16*x/width+1);
+							var c = Math.floor(17*x/width);
 							var i = (x%4) + (y%4)*4;
 							c = (c >= pattern[i]) ? 1 : 0;
 							drawPixel(x, y, c*r, c*g, c*b);
