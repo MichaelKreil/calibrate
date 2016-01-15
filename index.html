@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+	<meta charset='utf-8'>
+	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>Calibrate</title>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="style/normalize.css">
+	<link rel="stylesheet" type="text/css" href="style/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="script/main.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="screen0" class="screen">
+			<div class="screenOverlay">
+				<h1>calibrate the projector</h1>
+				<button class="showScreen1 button-primary">start</button>
+				<button class="showScreen2">colors</button>
+			</div>
+		</div>
+		<div id="screen1" class="screen">
+			<canvas id="canvas1"></canvas>
+			<div class="screenOverlay">
+				<h1>size and position</h1>
+				<h4>size: <span class="size"></span></h4>
+				<button class="showScreen2 button-primary">colors</button>
+				<button class="showScreen0">end</button>
+			</div>
+		</div>
+		<div id="screen2" class="screen">
+			<canvas id="canvas2"></canvas>
+			<div class="screenOverlay">
+				<h1>color</h1>
+				<button class="showScreen1 button-primary">size and position</button>
+				<button class="showScreen0">end</button>
+			</div>
+		</div>
+	</wrapper>
+</body>
+</html>
